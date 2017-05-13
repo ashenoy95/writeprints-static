@@ -1,6 +1,6 @@
 # Writeprints-Static Feature Set
 
-Script to extract important features from the Writeprint-Static Feature Set for (Adverserial) Stylometry [Brennan et al, 2012].
+Script to extract important features from the Writeprint-Static Feature Set for (Adverserial) Stylometry [Brennan, Afroz, and Greenstadt (2012)].
 
 (Adapted from the Whiteprints approach [Abbasi and Chen, 2008])
 
