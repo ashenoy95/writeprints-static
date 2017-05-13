@@ -42,7 +42,7 @@ def punctuation_freq(text):
     return [text.count(punctuation) for punctuation in punctuations] 
 
 def extract_features(texts):														#extracts features to list of lists 
-	#each sublist consists of all features of a particular text
+	#each sublist consists of all 239 features of a particular text
     features = []
     for text in texts:
         row = [len(text.split())] + [average_characters_per_word(text)] + [len([word for word in text.split() if len(word) <=3])] + [character_count(text)] + [sum([char.isdigit() for char in text])*100/len(text)] + [sum([char.isupper() for char in text])*100/len(text)] + [text.count(x) for x in '#$%&\()*+/<=>@[\\]^_{|}~'] + list(character_frequency(text)) + [text.lower().count(char) for char in string.digits]
