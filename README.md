@@ -1,0 +1,1 @@
+# writeprints-static
