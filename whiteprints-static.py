@@ -51,7 +51,6 @@ def extract_features(texts):														#extracts features to list of lists
         features.append(row)														#single merged list is appended to list of lists
     return features
 
-#texts_known_authors (list of str): texts of authors (for training)
-train = np.array(extract_features(texts_known_authors))
+
 
 
