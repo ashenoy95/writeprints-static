@@ -27,7 +27,7 @@ def pos_tag_frequency(text):
     tags = [tag[1] for tag in pos_tags]
     return tuple(tags.count(tag) for tag in tagset)
 
-def legomena(text):																	#returns ratio of hapax and dis legomena
+def legomena(text):																	    #returns ratio of hapax and dis legomena
 	'''
 	hapax legomena	:	terms which occur only once in the corpus
 	dis legomena	:	terms which occur twice in the corpus	 	
@@ -41,14 +41,16 @@ def punctuation_freq(text):
     punctuations = ':;?.!,"' + "'"
     return [text.count(punctuation) for punctuation in punctuations] 
 
-def extract_features(texts):														#extracts features to list of lists 
+def extract_features(texts):														     #extracts features to list of lists 
 	#each sublist consists of all 239 features of a particular text
     features = []
     for text in texts:
-        row = [len(text.split())] + [average_characters_per_word(text)] + [len([word for word in text.split() if len(word) <=3])] + [character_count(text)] + [sum([char.isdigit() for char in text])*100/len(text)] + [sum([char.isupper() for char in text])*100/len(text)] + [text.count(x) for x in '#$%&\()*+/<=>@[\\]^_{|}~'] + list(character_frequency(text)) + [text.lower().count(char) for char in string.digits]
-        row+= [legomena(text)] + list(pos_tag_frequency(text)) + punctuation_freq(text) + [sum(punctuation_freq(text))*100/len(text)]
-        row+= [text.count(word) for word in nltk.corpus.stopwords.words('english')]	#function words
-        features.append(row)														#single merged list is appended to list of lists
+        row = ([len(text.split())] + [average_characters_per_word(text)] + [len([word for word in text.split() if len(word) <=3])]
+            + [character_count(text)] + [sum([char.isdigit() for char in text])*100/len(text)] + [sum([char.isupper() for char in text])*100/len(text)]
+            + [text.count(x) for x in '#$%&\()*+/<=>@[\\]^_{|}~'] + list(character_frequency(text)) + [text.lower().count(char) for char in string.digits])
+        row += [legomena(text)] + list(pos_tag_frequency(text)) + punctuation_freq(text) + [sum(punctuation_freq(text))*100/len(text)]
+        row += [text.count(word) for word in nltk.corpus.stopwords.words('english')]    #function words
+        features.append(row)														    #single merged list is appended to list of lists
     return features
 
 
