@@ -3,7 +3,7 @@
 Code to extract important features from the Writeprint-Static Feature Set for (Adverserial) __Stylometry__
 [[Brennan, Afroz, and Greenstadt (2012)]](https://www.cs.drexel.edu/~sa499/papers/adversarial_stylometry.pdf).
 
-(Adapted from the Whiteprints approach [Abbasi and Chen, 2008])
+(Adapted from the Whiteprints approach [[Abbasi and Chen, 2008]](https://www.scss.tcd.ie/Khurshid.Ahmad/Research/Sentiments/K_Teams_Buchraest/a7-abbasi.pdf))
 
 
 | Group     | Category            | No. of Features | Description                                                       |
